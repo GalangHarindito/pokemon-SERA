@@ -1,0 +1,56 @@
+.detail-pokemon {
+  padding: 5rem;
+}
+
+.detail-pokemon > div {
+  border: 1px solid gray;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 1fr;
+  grid-template-areas: 
+  'header header'
+  'picture description';
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.detail-pokemon > div > h3 {
+  grid-area: header;
+  padding: 1rem;
+}
+
+.detail-pokemon > div > img {
+  grid-area: picture;
+  width: 20rem;
+  padding: 2rem;
+}
+
+.detail-pokemon > div > div {
+  grid-area: description;
+  padding: 2rem;
+}
+
+.detail-pokemon > div > div > p {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+
+.form-button {
+  float: right;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-button > button {
+  padding: 0.6rem 2rem;
+  background-color: red;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+  cursor: pointer;
+}

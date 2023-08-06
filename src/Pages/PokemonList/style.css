@@ -1,0 +1,8 @@
+.pokemon-list > div {
+  padding: 2rem 6rem;
+
+}
+
+.card {
+  justify-self: center;
+}

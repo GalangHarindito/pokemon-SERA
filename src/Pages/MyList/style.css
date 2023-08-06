@@ -1,0 +1,48 @@
+.myList {
+  padding: 2rem 6rem;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.card-container {
+  padding: 1.5rem;
+  border: 1px solid gray;
+  margin: 0 2rem 2rem 0;
+  border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  -ms-border-radius: 0.2rem;
+  -o-border-radius: 0.2rem;
+  cursor: pointer;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-container:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+.card-container > p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.card-container > section {
+  height: 11rem;
+  margin: auto;
+}
+
+.card-container > section > img {
+  max-width: 8rem;
+  height: 90%;
+}
