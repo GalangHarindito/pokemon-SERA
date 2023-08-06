@@ -5,12 +5,11 @@ import { getAllPokemon } from "./action";
 import { useSelector } from "react-redux";
 import CardPokemon from "../../component/CardPokemon";
 import InfiniteScroll from "react-infinite-scroll-component";
-import icPrev from "../../assets/ic-arrow-left.svg";
-import icNext from "../../assets/ic-arrow-right.svg";
 import queryString from "querystring";
 import { useHistory, useLocation } from "react-router";
 import DetailPokemon from "../DetailPokemon";
 import { Link } from "react-router-dom";
+import Loaders from "../../component/loaders/Loaders";
 
 export default function PokemonList() {
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ export default function PokemonList() {
   const { search } = useLocation();
   let { offset } = queryString.parse(search.replace("?", ""));
   const { pokemon } = queryString.parse(search.replace("?", ""));
-  const { dataResults, dataNext, dataPrevious, dataCount, isLoading } =
+  const { dataResults, dataNext, dataCount, isLoading } =
     useSelector((s) => s.pokemonList);
   const [dataAll, setDataAll] = useState([]);
   const [hasMore, setHasMore] = useState(true)
@@ -67,7 +66,7 @@ export default function PokemonList() {
             next={nextData}
             style={{ overflow: "hidden" }}
             hasMore={hasMore}
-            loader={<h4>Loading...</h4>}
+            loader={isLoading ? <Loaders use='global' /> : <p>More Pokemon</p>}
           >
             <CardPokemon
               data={dataAll}
