@@ -1,6 +1,5 @@
 import { FAILED, LOADING, SUCCESS } from "./constants";
 import axios from "axios";
-import { toast } from "react-toastify";
 import { BASIC_URL } from "../../utils/fetch";
 import queryString from "querystring";
 
@@ -14,18 +13,6 @@ export function getAllPokemon(query) {
       method: "GET",
       url: `${BASIC_URL}/pokemon${req}`,
       headers: {},
-    };
-
-    const toasterError = (text) => {
-      toast.error(`${text}`, {
-        position: "top-center",
-        autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
     };
 
     axios(options)

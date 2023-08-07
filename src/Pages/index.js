@@ -8,8 +8,9 @@ const Suspensed = (Element) => function suspense(props) {
   );
 };
 
-export default {
+const page = {
   Home: Suspensed(React.lazy(() => import('./Home'))),
   PokemonList: Suspensed(React.lazy(() => import('./PokemonList'))),
-  MyList: Suspensed(React.lazy(() => import('./MyList'))),
-};
+}
+
+export default page;

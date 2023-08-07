@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router";
 import queryString from "querystring";
 import "./style.css";
-import { getPokemonId, resetMessage, storePokemon } from "./action";
+import { getPokemonId, resetMessage } from "./action";
 import { useSelector } from "react-redux";
 
 export default function DetailPokemon() {
