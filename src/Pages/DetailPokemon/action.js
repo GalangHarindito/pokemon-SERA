@@ -1,4 +1,4 @@
-import { FAILED, LOADING, SUCCESS } from "./constants";
+import { LOADING, SUCCESS } from "./constants";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BASIC_URL, BASIC_URL_LOCAL } from "../../utils/fetch";
@@ -12,18 +12,6 @@ export function getPokemonId(id) {
       method: "GET",
       url: `${BASIC_URL}/pokemon/${id}`,
       headers: {},
-    };
-
-    const toasterError = (text) => {
-      toast.success(`${text}`, {
-        position: "top-center",
-        autoClose: false,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
     };
 
     axios(options)
@@ -116,10 +104,6 @@ export function storePokemon(payload) {
 
 export function resetMessage(data, key) {
   return successAction(data, key);
-}
-
-function failedAction(message, key) {
-  return { type: FAILED, message, key };
 }
 
 function loadingAction(isLoading, key) {

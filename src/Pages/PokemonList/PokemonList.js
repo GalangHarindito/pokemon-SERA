@@ -21,6 +21,8 @@ export default function PokemonList() {
     useSelector((s) => s.pokemonList);
   const [dataAll, setDataAll] = useState([]);
   const [hasMore, setHasMore] = useState(true)
+
+  // eslint-disable-next-line
   let req = {
     limit: 20,
     offset: offset || 0,
@@ -28,14 +30,17 @@ export default function PokemonList() {
 
   useEffect(() => {
     dispatch(getAllPokemon(req));
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     setDataAll(dataAll.concat(dataResults))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dataResults]);
 
   useEffect(() => {
     dispatch(getAllPokemon(req));
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [offset]);
 
   if (search.includes("?pokemon") && pokemon) {
